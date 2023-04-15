@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EncriptadorDCM1.26</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+        <script type="text/javascript">
+            function encriptar() {
+                const textoqueingresa = document.querySelector('.entradadetxt');
+                const textoquesale = document.querySelector('.salidadetxt');
+                let texto = textoqueingresa.value;
+                texto = texto.replace(/e/gi, 'enter');
+                texto = texto.replace(/i/gi, 'imes');
+                texto = texto.replace(/a/gi, 'ai');
+                texto = texto.replace(/o/gi, 'ober');
+                texto = texto.replace(/u/gi, 'ufat');
+                textoquesale.value = texto;
+            }
+
+            function desencriptar() {
+                const textoqueingresa = document.querySelector('.entradadetxt');
+                const textoquesale = document.querySelector('.salidadetxt');
+                let texto = textoqueingresa.value;
+                texto = texto.replace(/enter/gi, 'e');
+                texto = texto.replace(/imes/gi, 'i');
+                texto = texto.replace(/ai/gi, 'a');
+                texto = texto.replace(/ober/gi, 'o');
+                texto = texto.replace(/ufat/gi, 'u');
+                textoquesale.value = texto;
+            }
+
+            function copiar() {
+                const textoquesale = document.querySelector('.salidadetxt');
+                textoquesale.select();
+                document.execCommand('copy')
+            }
+        </script>
+    </head> 
+    <body>
+        <header>
+            <div class="encabezado">
+                <h1><img src="Imagenes/Logoalura.png"></h1>
+                    <ul>
+                        <li class="titulo"> Challegue 001 Encriptador con Javascript</li>
+                    </ul>
+            </div>   
+        </header>
+        <section class="entradasdetexto">
+            <textarea class="entradadetxt" cols="60" rows="20" placeholder="Agrega el texto que deseas alterar"></textarea>
+            <textarea class="salidadetxt" cols="20" rows="20" placeholder="Tu codigo"></textarea>
+        </section>
+
+        <section class="botones">
+            <input type="submit" value=" Encriptar " class="enviar" onclick="encriptar()">
+            <input type="submit" value=" Desencriptar " class="enviar" onclick="desencriptar()">
+            <input type="submit" value=" Copiar " class="enviar" onclick="copiar()">
+        </section>
+
+
+        <footer>
+            <img src="Imagenes/Subatom.png">
+            <p class="derechos">&copy ArturoRangChvz Todos los derechos reservados 2023.</p>
+        </footer>
+    </body>
+</html>
